@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정 페이지</title>
+</head>
+<body>
+<form th:action="@{'/post/edit/'+${registerDto.id}}" th:method="put">
+
+    이름 : <input type ="text" name="name" th:value="${registerDto.name}"> <br>
+    나이 : <input type ="text" name="age" th:value="${registerDto.age}"> <br>
+    전공 : <input type ="text" name="major" th:value="${registerDto.major}"> <br>
+
+    자기소개<br>
+    <textarea name="intro">[[${registerDto.intro}]]</textarea><br>
+
+    <input type="submit" value="수정">
+</form>
+</body>
+</html>

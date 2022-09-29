@@ -1,4 +1,4 @@
-package likelion_backend.RegisterApi.post2.domain;
+package likelion_backend.RegisterApi.post.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

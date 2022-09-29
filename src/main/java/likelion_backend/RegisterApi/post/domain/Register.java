@@ -1,8 +1,8 @@
-package likelion_backend.RegisterApi.post2.domain;
+package likelion_backend.RegisterApi.post.domain;
 
 // Post.java
 
-import lombok.AllArgsConstructor;
+import likelion_backend.RegisterApi.post.dto.RegisterDto;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 
-public class Information extends BaseTimeEntity{
+public class Register extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,11 +31,19 @@ public class Information extends BaseTimeEntity{
     private String intro;
 
    @Builder
-    public Information(Long id, String name, String age, String major, String intro){
+    public Register(Long id, String name, String age, String major, String intro){
        this.id=id;
        this.name=name;
        this.age=age;
        this.major=major;
        this.intro=intro;
    }
+
+   public void update(RegisterDto registerDto){
+       this.name = registerDto.getName();
+       this.age = registerDto.getAge();
+       this.major = registerDto.getMajor();
+       this.intro = registerDto.getIntro();
+   }
+
 }

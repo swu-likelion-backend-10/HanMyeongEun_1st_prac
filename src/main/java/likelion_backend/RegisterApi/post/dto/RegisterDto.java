@@ -1,10 +1,12 @@
-package likelion_backend.RegisterApi.post2.dto;
+package likelion_backend.RegisterApi.post.dto;
 
-import likelion_backend.RegisterApi.post2.domain.Information;
+import likelion_backend.RegisterApi.post.domain.Register;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class RegisterDto {
 
     private Long id;
@@ -16,8 +18,8 @@ public class RegisterDto {
     private LocalDateTime createdTime;
     private LocalDateTime modifiedTime;
 
-    public Information toEntity() {
-        Information build = Information.builder()
+    public Register toEntity() {
+        Register build = Register.builder()
                 .id(id)
                 .name(name)
                 .age(age)
