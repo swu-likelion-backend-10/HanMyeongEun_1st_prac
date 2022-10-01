@@ -7,9 +7,9 @@
 <body>
 <a th:href="@{/post}">글쓰기</a>
 
-<form action="'/board/search" method="GET">
+<form action="/board/search" method="GET">
   <div>
-    <input name="'keyword" type= "test" placeholder="검색어를 입력해주세요.">
+    <input name="'keyword" type= "text" placeholder="검색어를 입력해주세요.">
   </div>
 
   <button> 검색하기 </button>
@@ -43,8 +43,8 @@
   </tbody>
 </table>
 
-<span th:each="pageNum : ${pageList}" th:inline="text">
-      <a th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>
-    </span>
+<!--<span th:each="pageNum : ${pageList}" th:inline="text">-->
+<!--      <a th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>-->
+<!--    </span>-->
 </body>
 </html>

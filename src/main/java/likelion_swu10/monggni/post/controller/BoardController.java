@@ -18,12 +18,12 @@ public class BoardController {
         this.boardService=boardService;
     }
 
-//    @GetMapping("/")
-//    public  String list(Model model){
-//        List<BoardDto> boardDtoList = boardService.getBoardlist();
-//        model.addAttribute("boardList", boardDtoList);
-//        return"board/list.html";
-//    }
+    @GetMapping("/")
+    public  String list(Model model){
+        List<BoardDto> boardDtoList = boardService.getBoardlist();
+        model.addAttribute("boardList", boardDtoList);
+        return"board/list.html";
+    }
 
     @GetMapping("/post")
     public String write(){
@@ -59,8 +59,8 @@ public class BoardController {
         boardService.deletePost(id);
         return "redirect:/";
     }
-    @GetMapping("/post/search")
-    public String search(@RequestParam(value="keyword") String keyword, Model model){
+    @GetMapping("/board/search/")
+    public String search(@RequestParam(value="keyword", required = false) String keyword, Model model){
         List<BoardDto> boardDtoList = boardService.searchPosts(keyword);
 
         model.addAttribute("boardList", boardDtoList);
@@ -68,16 +68,16 @@ public class BoardController {
 
     }
 
-    @GetMapping("/")
-    public String list(Model model, @RequestParam(value="page", defaultValue = "1")Integer pageNum){
-        List<BoardDto> boardList = boardService.getBoardlist(pageNum);
-        Integer[] pageList = boardService.getPageList(pageNum);
-
-        model.addAttribute("boardList", boardList);
-        model.addAttribute("pageList",pageList);
-
-        return "board/list.html";
-    }
+//    @GetMapping("/")
+//    public String list(Model model, @RequestParam(value="page", defaultValue = "1")Integer pageNum){
+//        List<BoardDto> boardList = boardService.getBoardlist(pageNum);
+//        Integer[] pageList = boardService.getPageList(pageNum);
+//
+//        model.addAttribute("boardList", boardList);
+//        model.addAttribute("pageList",pageList);
+//
+//        return "board/list.html";
+//    }
 
 
 }
