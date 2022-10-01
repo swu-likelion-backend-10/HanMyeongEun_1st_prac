@@ -4,11 +4,7 @@ plugins {
 	id 'java'
 }
 
-
 group = 'likelion_swu10'
-
-group = 'likelion_backend'
-
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
