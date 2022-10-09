@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <title>관리자 페이지</title>
+</head>
+<body>
+<br>
+<br>
+<table>
+  <thread>
+    <tr>
+      <th>id</th>
+      <th>email</th>
+    </tr>
+  </thread>
+
+  <tbody>
+  <!--Contents !-->
+  <tr th:each="member : ${memberList}">
+    <td>
+      <span th:text="${member.id}"></span>
+    </td>
+    <td>
+      <span th:text="${member.email}"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

@@ -59,7 +59,7 @@ public class BoardController {
         boardService.deletePost(id);
         return "redirect:/";
     }
-    @GetMapping("/board/search/")
+    @GetMapping("/post/search/")
     public String search(@RequestParam(value="keyword", required = false) String keyword, Model model){
         List<BoardDto> boardDtoList = boardService.searchPosts(keyword);
 
